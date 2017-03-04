@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 字体描边颜色 -->
+    <declare-styleable name="StrokeTextView">
+        <attr name="strokeTextColor" format="color"/>
+    </declare-styleable>
+    <!-- 垂直滚动文本 -->
+    <declare-styleable name="VerticalTextview">
+        <!-- 字体颜色 -->
+        <attr name="verticalTextColor" format="color"/>
+        <!-- 字体大小 -->
+        <attr name="verticalTextSize" format="dimension"/>
+        <!-- 字体style -->
+        <attr name="verticalTextStyle" format="integer"/>
+        <!-- 字体描边颜色 -->
+        <attr name="verticalStrokeTextColor" format="color"/>
+    </declare-styleable>
+    <!-- 根据内容添加一组垂直滚动文本 -->
+    <declare-styleable name="AutoVerticalLinearLayout">
+        <!-- 字体颜色 -->
+        <attr name="autoVerticalTextColor" format="color"/>
+        <!-- 字体大小 -->
+        <attr name="autoVerticalTextSize" format="dimension"/>
+        <!-- 字体style -->
+        <attr name="autoVerticalTextStyle" format="integer"/>
+        <!-- 字体描边颜色 -->
+        <attr name="autoVerticalStrokeTextColor" format="color"/>
+    </declare-styleable>
+</resources>
