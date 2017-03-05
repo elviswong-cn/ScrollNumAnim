@@ -18,14 +18,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:hint="请输入数字(仅限整数)"
+        android:hint="Please input number"
         android:inputType="number"/>
 
     <Button
         android:id="@+id/main_btn_start"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="开始"/>
+        android:text="Start animation"/>
 
 
     <elvis.anim.scrollnum.ui.scrollnum.AutoVerticalLinearLayout
