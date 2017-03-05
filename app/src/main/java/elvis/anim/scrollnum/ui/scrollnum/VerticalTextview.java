@@ -26,7 +26,7 @@ import elvis.anim.scrollnum.ui.StrokeTextView;
 public class VerticalTextview extends TextSwitcher implements ViewSwitcher.ViewFactory {
 	private static final int FLAG_START_AUTO_SCROLL = 0;
 	private static final int FLAG_STOP_AUTO_SCROLL = 1;
-	private ArrayList<Integer> showList = new ArrayList<>();        // 实际滚动数据组
+	private ArrayList<Long> showList = new ArrayList<>();        // 实际滚动数据组
 
 	private Context mContext;
 	// 描边默认白色
@@ -41,7 +41,7 @@ public class VerticalTextview extends TextSwitcher implements ViewSwitcher.ViewF
 	// 所有文本从滑入到滑出，以及停留的时间
 	private long mAnimDurationTotal = 3000;
 	// 最终滚动结束，需要显示的数据
-	private int currentNum = 0;    //当前的num
+	private long currentNum = 0;    //当前的num
 	private int currentId = -1;        //滚动下标
 	private int scrollNum = 1;        //滚动数量
 	private Handler handler;
@@ -144,19 +144,19 @@ public class VerticalTextview extends TextSwitcher implements ViewSwitcher.ViewF
 	}
 
 	// 设置最终的赋值
-	public void setNum(int num) {
+	public void setNum(long num) {
 		showList.clear();
 		currentId = -1;        // 还原
 		//根据currentNum 与 num 算 得出showList
 		if (num <= currentNum) {
-			int count = 11 - currentNum + num;
+			long count = 11 - currentNum + num;
 			// 第二次数据比之前数据小，叠加到最大，从0加到第二次数据
 			for (int i = 0; i < count; i++) {
 				showList.add(currentNum);
 				currentNum = (++currentNum) % 10;
 			}
 		} else {
-			for (int i = currentNum; i <= num; i++) {
+			for (long i = currentNum; i <= num; i++) {
 				showList.add(i);
 			}
 		}
