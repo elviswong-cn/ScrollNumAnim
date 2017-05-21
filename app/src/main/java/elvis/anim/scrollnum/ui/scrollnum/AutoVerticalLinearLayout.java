@@ -18,8 +18,8 @@ import elvis.anim.scrollnum.R;
 
 public class AutoVerticalLinearLayout extends LinearLayout {
     private Context mContext;
-    private long data;                                        //数值
-    private List<Long> datas = new ArrayList<>();        //数字按照个十百千
+    private String data;                                        //数值
+    private List<String> datas = new ArrayList<>();        //数字按照个十百千
     private List<VerticalTextview> views = new ArrayList<>();
     // 描边默认白色
     private int strokeTextColor = getResources().getColor(android.R.color.white);
@@ -55,14 +55,14 @@ public class AutoVerticalLinearLayout extends LinearLayout {
         a.recycle();
     }
 
-    public void addData(long data) {
+    public void addData(String data) {
         this.data = data;
         // 将数字转换为char数组
         char[] chars = String.valueOf(data).toCharArray();
         datas.clear();
         for (char ch : chars) {
             // 直接将char转换为int 拿到的数据为ASCII码值
-            datas.add(Long.valueOf(String.valueOf(ch)));
+            datas.add(String.valueOf(ch));
         }
         // 第二次的数据等于第一次的数据
         addView();
@@ -85,7 +85,7 @@ public class AutoVerticalLinearLayout extends LinearLayout {
         } else if (datas.size() < views.size()) {
             views.clear();
             removeAllViews();
-            for (Long data : datas) {
+            for (String data : datas) {
                 VerticalTextview tv = new VerticalTextview(mContext);
                 tv.setVerticalTextColor(verticalTextColor);
                 tv.setStrokeTextColor(strokeTextColor);

@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
             String numTxt = mEtNum.getText().toString();
             if (!TextUtils.isEmpty(numTxt)) {
-                mAutoLayout.addData(Long.valueOf(numTxt));
+                mAutoLayout.addData(numTxt);
                 //                mAutoLayout.getAnimation().setAnimationListener(autoAnimListener);
                 Animation outAnim = mAutoLayout.getOutAnim();
                 // 设置动画结束操作
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 mAutoLayout.startAnim();
             } else {
-                Toast.makeText(MainActivity.this, "请输入一个有效整数", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "请输入一个有效数字", Toast.LENGTH_SHORT).show();
             }
         }
     };
