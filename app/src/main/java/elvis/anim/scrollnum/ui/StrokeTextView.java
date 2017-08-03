@@ -7,6 +7,7 @@ import android.graphics.Paint.Style;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 import android.util.AttributeSet;
+import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -68,7 +69,7 @@ public class StrokeTextView extends TextView {
 		tp1.setStrokeWidth(4); // 设置描边宽度
 		tp1.setStyle(Style.STROKE); // 对文字只描边
 		borderText.setTextColor(strokeTextColor); // 设置描边颜色
-		borderText.setGravity(getGravity());
+		borderText.setGravity(Gravity.CENTER);
 	}
 
 	@Override
@@ -92,6 +93,12 @@ public class StrokeTextView extends TextView {
 	public void setStrokeTextColor(int strokeTextColor) {
 		this.strokeTextColor = strokeTextColor;
 		borderText.setTextColor(strokeTextColor);
+	}
+
+	@Override
+	public void setGravity(int gravity) {
+		super.setGravity(gravity);
+		borderText.setGravity(gravity);
 	}
 
 	protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
