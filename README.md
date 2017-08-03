@@ -2,7 +2,7 @@
 ======
 效果图
 _____
-![](https://github.com/chinahyong/ScrollNumAnim/blob/3cbdc9bb45dd31df2e4c6657367381625cd872a0/%E6%95%88%E6%9E%9C%E5%9B%BE.gif "效果图")
+![](https://github.com/chinahyong/ScrollNumAnim/gif.gif "效果图")
     .    
 项目实现
 ______
